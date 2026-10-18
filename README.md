@@ -1,8 +1,32 @@
-# Academic CV Templates
+<h1 align="center">Academic CV Templates</h1>
 
-中英文学术简历模板，提供 LaTeX 与 Word 两种格式，适用于研究生申请、科研岗位申请及学术交流。
+<p align="center">
+  中英文学术简历模板，提供 LaTeX 与 Word 两种格式，<br>
+  适用于研究生申请、科研岗位申请及学术交流。
+</p>
 
-Bilingual academic CV templates in Chinese and English, available in LaTeX and Word, for graduate admissions, research positions, and academic exchange.
+<p align="center">
+  Bilingual academic CV templates in Chinese and English, available in LaTeX and Word,<br>
+  for graduate admissions, research positions, and academic exchange.
+</p>
+
+<p align="center">
+  <a href="latex/">
+    <img src="https://img.shields.io/badge/LaTeX-XeLaTeX-008080?style=flat-square&amp;logo=latex&amp;logoColor=white" alt="LaTeX · XeLaTeX">
+  </a>
+  <a href="word/">
+    <img src="https://img.shields.io/badge/Word-DOCX-185ABD?style=flat-square" alt="Word · DOCX">
+  </a>
+  <a href="#模板预览">
+    <img src="https://img.shields.io/badge/Languages-ZH%20%7C%20EN-64748B?style=flat-square" alt="中文与 English 双语模板">
+  </a>
+</p>
+
+<p align="center">
+  <a href="#模板预览">模板预览</a> ·
+  <a href="#快速开始">快速开始</a> ·
+  <a href="docs/writing-guide.md">填写指南</a>
+</p>
 
 主要面向本科高年级学生、硕士生、博士生及近期毕业生。正文使用通用填写提示：将 `[...]` 替换为本人信息，删除不适用的条目即可。
 
