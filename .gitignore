@@ -1,0 +1,32 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+~$*
+.~*
+*.swp
+*.swo
+*.bak
+.idea/
+.vscode/
+
+# LaTeX build products
+latex/build/
+latex/*.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+*.bbl
+*.blg
+
+# Local assets and working copies
+latex/photo.*
+latex/university-logo.*
+private/
+tmp/
+__pycache__/
