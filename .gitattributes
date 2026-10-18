@@ -1,0 +1,2 @@
+# Small vector PDFs can look like text to Git; preserve them as binary assets.
+*.pdf binary

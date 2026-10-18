@@ -1,82 +1,105 @@
 % !TeX program = xelatex
-% English academic CV: bracketed text is guidance, not a person's credentials.
-% Complete each field, remove inapplicable entries, and keep both languages in sync.
+% Brackets and 20XX are prompts. Remove inapplicable sections and keep both versions consistent.
 \documentclass[english]{academic-cv}
 
 \hypersetup{pdftitle={Academic CV},pdfauthor={}}
-% Add the logo of your current or former institution, keeping its aspect ratio.
+% Use the logo of your current or former institution and keep image aspect ratios.
 % \setresumelogo{university-logo.png}
-% Uncomment to omit the logo and its placeholder.
 % \hideresumelogo
-% Uncomment after adding your own portrait (recommended aspect ratio: 25:35).
 % \setresumephoto{photo.jpg}
 
 \begin{document}
 
 \resumeheader{[YOUR NAME]}
-  {\href{mailto:name@example.com}{name@example.com}\enspace |\enspace [Phone number]}
-  {[City, Country]\enspace |\enspace Academic website: \href{https://example.com}{example.com}}
+  {\resumelocationicon\textbf{Location:} [City, Country]\enspace |\enspace \textbf{Research area:} [Topic]\enspace |\enspace
+   \href{https://example.com/scholar}{\resumescholaricon Scholar}}
+  {\href{mailto:name@example.com}{\resumeemailicon\textbf{Email:} name@example.com}\enspace |\enspace
+   \resumephoneicon\textbf{Phone:} [Phone number]}
+% Replace both example profile URLs. Personal demographic details are optional.
+% Replace the Scholar link with a relevant profile as needed; keep the header concise:
+% \href{https://github.com/your-username}{\resumegithubicon GitHub}
+% \href{https://example.com}{\resumehomepageicon Homepage}
 
 \section{Education}
 
-\educationentry{[Institution name]}{[Field of study]}{[Degree]}{[Start -- End]}
-\resumepair{\textbf{GPA:} [Score / scale, optional]}{\textbf{Rank:} [Position / cohort size, optional]}
-\resumepair{\textbf{Research area:} [Topic]}{\textbf{Advisor:} [Name, optional]}
+\educationentry{[Institution and department]}{[Field of study]}{[Master's degree, in progress]}{[Start -- Present]}
 \begin{itemize}
-  \item \textbf{Thesis:} [Title; optionally add the research focus relevant to your application]
+  \item \textbf{Advisor:} \href{https://example.com/advisor}{\resumewebicon [Advisor's name]}\hspace{1.5em}\textbf{Research area:} [Topic].
+  \item \textbf{Expected graduation:} [Month, Year; retain only if applicable]; \textbf{Coursework:} [Relevant courses or research training].
+  % \item \textbf{Student roles:} [Actual position and dates, optional].
 \end{itemize}
 
-\educationentry{[Institution name]}{[Field of study]}{[Degree]}{[Start -- End]}
-\resumepair{\textbf{GPA:} [Score / scale, optional]}{\textbf{Rank:} [Position / cohort size, optional]}
+\resumeentrysep
+\educationentry{[Institution and department]}{[Field of study]}{[Bachelor's degree]}{[Start -- End]}
 \begin{itemize}
-  \item \textbf{Relevant coursework:} [Select courses related to your application rather than listing every course]
+  \item \textbf{GPA:} [Score / scale]\hspace{1.5em}\textbf{Coursework:} [Selected courses relevant to the application].
+  \item \textbf{University honors:} [Honor, awarding body, and date; list under the relevant institution].
+  \item \begin{tabularx}{\linewidth}[t]{@{}l@{\hspace{.35em}}>{\raggedright\arraybackslash}X@{}}
+    \textbf{Competitions:} & [Competition, award level, and year].\\
+    & [Another competition, award level, and year; keep each award on a separate line].
+  \end{tabularx}
 \end{itemize}
 
-\section{Publications}
+\section{Research Outputs}
+
+\subsection*{I. Publications}
+
+% Preserve actual author order and highlight your name with \cvname{Your Name}.
+% Use et al. only where the citation style permits it; state the actual publication status.
+\begin{enumerate}[label={[\arabic*]},leftmargin=2em,labelsep=.55em,itemsep=5pt]
+  \item {[Preceding authors]}, \cvname{[Your Name]}, et al.
+    [Paper title]. \textit{[Official journal or conference name]}, [Year]. [Volume, pages, DOI, or acceptance information, as applicable].
+  \item {[Preceding authors]}, \cvname{[Your Name]}, et al.
+    [Preprint title]. \textit{[Preprint platform]}, [Year]. [Identifier or stable URL; distinguish from peer-reviewed acceptance].
+  \item \textbf{[Paper or ongoing research title] ([Author position], [Actual submission status]).}\par
+    [Research question and method; your own work; results already obtained and evaluation conditions. Expand to two or three lines where useful.]
+\end{enumerate}
+
+\subsection*{II. Patents}
+
+% The heading dates refer to research work; filing and grant details belong below.
+\datedentry{[Patent title] ([Inventor position])}{[Research dates]}
 \begin{itemize}
-  \item {[Authors, with your name identified]}. [Paper title]. \textit{[Journal or conference]}, [Year]. [Publication status; DOI or link, optional].
-  \item {[Authors, with your name identified]}. [Paper title]. \textit{[Journal or conference]}, [Year]. [Publication status; DOI or link, optional].
+  \item \textbf{Patent information:} [Filing or grant status, identifier, and corresponding date, based on the official record].
+  \item \textbf{Technical work and contribution:} [Problem addressed, core method, and the technical work you performed].
 \end{itemize}
 
-\section{Research Experience}
+\subsection*{III. Books and Chapters}
 
-\datedentry{[Research project title]}{[Start -- End]}
-\resumesubtitle{[Your role]}{[Research group or institution]}
 \begin{itemize}
-  \item \textbf{Research question:} [Describe the context, the problem to address, and the scope of the project.]
-  \item \textbf{Research work:} [Explain the methods, sources or data, and the research tasks you personally completed.]
-  \item \textbf{Key outcomes:} [State findings or outputs, the evidence used to assess them, their limits, and your contribution.]
+  \item {[Authors, title, publisher, year, and actual publication status]}; contributed [Chapter or specific work].
 \end{itemize}
 
-\datedentry{[Research project title]}{[Start -- End]}
-\resumesubtitle{[Your role]}{[Research group or institution]}
-\begin{itemize}
-  \item \textbf{Project objective:} [Outline the research task, intended outputs, and the main question to resolve.]
-  \item \textbf{Implementation:} [Describe your work on source collection, study design, experiments, or analysis.]
-  \item \textbf{Progress and outputs:} [List reports, papers, data, or other outputs, how they were validated, and your contribution.]
-\end{itemize}
+\section{Internship Experience}
 
-\section{Professional and Practical Experience}
-
-\datedentry{[Organization name]}{[Start -- End]}
-\resumesubtitle{[Position or practical role]}{[Department or team]}
+\internshipentry{[Organization name]}{[Department / Team / Position]}{[Start -- Present]}
 \begin{itemize}
-  \item \textbf{Responsibilities:} [Describe the work context, the scope of the assignment, and your specific duties.]
-  \item \textbf{Actions:} [Explain your methods, collaboration, and the key steps taken to complete the assignment.]
-  \item \textbf{Results:} [State verifiable deliverables or improvements; define the basis of any numerical claims.]
+  \item \textbf{Research tasks and methods:} [Specific research problem, methods, and your own responsibilities].
+  \item \textbf{Implementation and evaluation:} [System, experiments, or analysis you completed, with key design choices and evaluation methods].
+  \item \textbf{Project outcomes:} [State verifiable deliverables or findings; define the basis and comparison conditions of numerical claims].
 \end{itemize}
 
 \section{Skills}
+
 \begin{itemize}
-  \item \textbf{Research methods:} [List methods you have used and briefly identify the research tasks they supported.]
-  \item \textbf{Tools and techniques:} [List relevant software, techniques, or specialist tools and what you can do independently.]
-  \item \textbf{Languages and qualifications:} [State proficiency, valid scores, or relevant qualifications; remove if inapplicable.]
+  \item \textbf{Tools and techniques:} [Tools or techniques]; able to complete [Specific development, analysis, or research tasks relevant to the application].
+  \item \textbf{Research methods:} [Methods] applied to [Actual research problems]; experience in [Study design, implementation, or analysis].
+  \item \textbf{Languages:} [Test, score, and year]; [Other language evidence or proficiency supported by your record].
 \end{itemize}
 
-\section{Honors and Awards}
-\begin{itemize}
-  \item {[Award or honor]} \enspace |\enspace [Awarding organization] \enspace |\enspace [Level or scope] \enspace |\enspace [Month, Year]
-  \item {[Award or honor]} \enspace |\enspace [Awarding organization] \enspace |\enspace [Level or scope] \enspace |\enspace [Month, Year]
-\end{itemize}
+% Copy the internship entry above for additional organizations and their projects.
+% Optional. Support each claim with evidence elsewhere in the CV.
+% \section{Self-assessment}
+% [Use two to four lines to describe research problem analysis, task execution, and collaboration, supported by your work.]
+
+% Place this optional section before internships for independent work not covered elsewhere.
+% \section{Research and Project Experience}
+% \datedentry{[Research or project title]}{[Start -- End]}
+% \resumesubtitle{[Your role]}{[Group or institution]}
+% \begin{itemize}
+%   \item \textbf{Research question:} [Specific problem and scope].
+%   \item \textbf{Your work:} [Methods, data or sources, and tasks you completed].
+%   \item \textbf{Outcomes:} [Completed outputs, evaluation evidence, and current status].
+% \end{itemize}
 
 \end{document}

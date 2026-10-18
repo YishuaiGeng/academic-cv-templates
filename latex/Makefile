@@ -1,7 +1,7 @@
 LATEXMK ?= latexmk
 OUTDIR := build
 SOURCES := academic-cv-zh.tex academic-cv-en.tex
-SHARED := academic-cv.cls
+SHARED := academic-cv.cls $(wildcard assets/*.pdf)
 PDFS := $(addprefix $(OUTDIR)/,$(SOURCES:.tex=.pdf))
 FLAGS := -xelatex -interaction=nonstopmode -halt-on-error -file-line-error
 

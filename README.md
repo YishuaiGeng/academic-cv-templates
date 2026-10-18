@@ -28,11 +28,11 @@
   <a href="docs/writing-guide.md">填写指南</a>
 </p>
 
-主要面向本科高年级学生、硕士生、博士生及近期毕业生。正文使用通用填写提示：将 `[...]` 替换为本人信息，删除不适用的条目即可。
+主要面向本科高年级学生、硕士生、博士生及近期毕业生。正文使用通用填写提示：将 `[...]` 和 `20XX` 替换为本人信息，删除不适用的条目即可。
 
 ## 模板预览
 
-LaTeX 版采用 A4 单栏，左上角预留院校校徽，中间为个人信息，右上角预留照片。中英文共用样式文件；当前示例均为一页，可按内容扩展。
+LaTeX 版采用 A4 单栏，左上角预留院校校徽，中间为两行个人信息，右上角预留照片。中文正文为 13 pt，标题使用粗体黑体；教育背景按列对齐，实习的单位、部门和日期同行展示。中英文共用样式文件，页数随内容调整。下图为首页预览，完整内容见 PDF。
 
 | 中文版 | English |
 | --- | --- |
@@ -58,11 +58,11 @@ LaTeX 版采用 A4 单栏，左上角预留院校校徽，中间为个人信息�
 
 ### Overleaf
 
-上传 `latex/` 中的两个 `.tex` 文件和一个 `.cls` 文件，将编译器设为 **XeLaTeX**，选择 `academic-cv-zh.tex` 或 `academic-cv-en.tex` 为主文件即可。
+将 `latex/` 内的文件上传到 Overleaf 项目根目录，**保留 `assets/` 子目录**。将编译器设为 **XeLaTeX**，选择 `academic-cv-zh.tex` 或 `academic-cv-en.tex` 为主文件即可。
 
 ### 本地编译
 
-安装含 XeLaTeX 的 TeX Live、MacTeX 或 MiKTeX。模板使用发行版提供的 Fandol Kai 和 TeX Gyre Termes，无需额外安装商业字体。在仓库根目录运行：
+安装含 XeLaTeX 的 TeX Live、MacTeX 或 MiKTeX。模板使用发行版提供的 Fandol Kai、Fandol Hei 和 TeX Gyre Termes，无需额外安装商业字体。在仓库根目录运行：
 
 ```sh
 make             # 编译中英文版本，更新 examples/ 中的 PDF
@@ -80,16 +80,29 @@ make clean       # 清理辅助文件，保留 PDF
 
 ```tex
 \setresumelogo{university-logo.png}  % 校徽：等比缩放到 22 × 22 mm 范围内
-\setresumephoto{photo.jpg}          % 照片：等比缩放到 25 × 35 mm 范围内
+\setresumephoto{photo.jpg}          % 照片：等比缩放到 25 × 30 mm 范围内
 ```
 
 无需校徽时使用 `\hideresumelogo` 隐藏校徽和占位框。`latex/university-logo.*` 与 `latex/photo.*` 已加入 Git 忽略规则。图片是否使用以申请要求为准。
 
+模板附带邮箱、电话、所在地、GitHub、个人主页、Scholar 及网络图标，尺寸与风格统一。顶部默认使用邮箱、电话、所在地与 Scholar；其他账号按需替换，保留可读文字。示例网址和联系方式需替换为本人信息。
+
+```tex
+\href{https://example.com/scholar}{\resumescholaricon Scholar}
+\href{https://example.com/advisor}{\resumewebicon [导师姓名]}
+\href{https://github.com/your-username}{\resumegithubicon GitHub}
+\href{https://example.com}{\resumehomepageicon 个人主页}
+```
+
+完整命令及来源见 [图标说明](latex/assets/README.md)。所在地通常写城市即可。
+
 ## 填写建议
 
-- 现有栏目已覆盖多数学生申请的基础内容；研究经历写清问题、本人工作、方法和结果。
-- 没有论文、工作经历或奖项时，可删除对应栏目；会议报告、助教和学术服务有相关经历再加。
-- 在读注明预计毕业时间，论文注明实际发表状态；中英文的日期、成果和个人贡献应一致。
+- 科研成果可按论文、专利、著作分组；论文使用规范引用，`\cvname{本人姓名}` 可加粗并加下划线。
+- 奖项可归入对应教育经历，每项竞赛独立一行；也可按需要单独设栏目。
+- 实习中的项目直接写入该段经历，保留方法、本人工作与结果；独立项目可启用源码中的可选模块，避免重复描述。
+- 专业能力写实际方法及能完成的任务，语言成绩附考试年份。自我评价按需启用，不以空泛评价代替经历。
+- 在读状态、成果状态和个人贡献应准确，中英文保持一致。没有相关经历的栏目直接删除。
 - 经历较少时一页即可，内容较多时可扩展；优先遵循申请方的格式与页数要求。
 
 更多栏目取舍与申请场景说明见[学术申请简历填写指南](docs/writing-guide.md)。字体、页边距和栏目间距可在 `latex/academic-cv.cls` 中调整。
@@ -98,7 +111,7 @@ make clean       # 清理辅助文件，保留 PDF
 
 `latex/` 保存 LaTeX 源码，`word/` 保存八种 Word 模板，`examples/` 保存示例 PDF，`docs/` 保存填写指南和预览图。文件名中的 `zh` / `en` 表示语言，`classic` / `compact` 表示版式，`color` / `mono` 表示配色。
 
-LaTeX 源码与构建脚本沿用原模板的 [MIT 许可证](LICENSE)。Word 文档为既有模板的整理版本，原文件未附独立许可声明。字体由本地 TeX 发行版提供，本仓库不分发字体文件。
+LaTeX 源码与构建脚本沿用原模板的 [MIT 许可证](LICENSE)。Word 文档为既有模板的整理版本，原文件未附独立许可声明。字体由本地 TeX 发行版提供，本仓库不分发字体文件；附带图标的来源见 [图标说明](latex/assets/README.md)。
 
 ## 简历制作与学习资源
 

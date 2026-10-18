@@ -1,83 +1,110 @@
 % !TeX program = xelatex
-% 中文学术简历：方括号内均为填写提示，不代表任何人的真实经历。
-% 按实际情况填写，并删除不适用的条目；中英文内容请同步更新。
+% 所有方括号及 20XX 均为填写提示；删除不适用的栏目并同步中英文。
 \documentclass[chinese]{academic-cv}
 
 \hypersetup{pdftitle={中文学术简历},pdfauthor={}}
-% 上传本人就读或毕业院校的校徽后取消下一行注释；保持原始比例。
+% 校徽使用本人就读或毕业院校的标识，照片保持原始比例。
 % \setresumelogo{university-logo.png}
-% 不需要校徽时取消下一行注释。
 % \hideresumelogo
-% 上传本人照片后取消下一行注释；建议使用 25:35 的竖版照片。
 % \setresumephoto{photo.jpg}
 
 \begin{document}
 
 \resumeheader{[姓名]}
-  {邮箱：\href{mailto:name@example.com}{name@example.com}\enspace |\enspace
-   电话：[联系电话]}
-  {所在地：[城市]\enspace |\enspace 学术主页：\href{https://example.com}{example.com}}
+  {\resumelocationicon\textbf{所在地：}[城市]\enspace |\enspace \textbf{申请方向：}[方向]\enspace |\enspace
+   \href{https://example.com/scholar}{\resumescholaricon Scholar}}
+  {\href{mailto:name@example.com}{\resumeemailicon\textbf{邮箱：}name@example.com}\enspace |\enspace
+   \resumephoneicon\textbf{电话/微信：}[联系电话]}
+% Scholar 与导师链接使用示例网址，须替换为本人及实际导师的页面。
+% 可按需替换顶部 Scholar 链接，避免将所有账号挤在同一行：
+% \href{https://github.com/your-username}{\resumegithubicon GitHub}
+% \href{https://example.com}{\resumehomepageicon 个人主页}
+% 籍贯、年龄、政治面貌等信息按申请要求选填，不是统一必填项。
 
 \section{教育背景}
 
-\educationentry{[学校名称]}{[专业名称]}{[学位名称]}{[起止年月]}
-\resumepair{\textbf{GPA：}[成绩/满分，可选]}{\textbf{专业排名：}[名次/总人数，可选]}
-\resumepair{\textbf{研究方向：}[研究主题]}{\textbf{导师：}[姓名，可选]}
+\educationentry{[学校名称及院系]}{[专业名称]}{硕士}{20XX.09--至今}
 \begin{itemize}
-  \item \textbf{学位论文：}[论文题目；可补充与申请方向相关的研究内容]
+  \item \textbf{导师：}\href{https://example.com/advisor}{\resumewebicon [导师姓名]}\hspace{1.5em}\textbf{研究方向：}[研究主题]。
+  \item \textbf{预计毕业：}[年月，仅在读时保留]；\textbf{相关课程：}[课程一、课程二、课程三]。
+  % \item \textbf{校内任职：}[实际角色及任期，可选]。
 \end{itemize}
 
-\educationentry{[学校名称]}{[专业名称]}{[学位名称]}{[起止年月]}
-\resumepair{\textbf{GPA：}[成绩/满分，可选]}{\textbf{专业排名：}[名次/总人数，可选]}
+\resumeentrysep
+\educationentry{[学校名称及院系]}{[专业名称]}{本科}{[起止年月]}
 \begin{itemize}
-  \item \textbf{相关课程：}[列出与申请方向相关的课程；无须罗列全部课程]
+  \item \textbf{GPA：}[成绩/满分]\hspace{1.5em}\textbf{相关课程：}[精选与申请相关的课程]。
+  \item \textbf{校级荣誉：}[荣誉名称、授予单位及获奖时间，按实际所属阶段填写]。
+  \item \begin{tabularx}{\linewidth}[t]{@{}l@{}>{\raggedright\arraybackslash}X@{}}
+    \textbf{学科竞赛：} & [竞赛名称、等级及年份]。\\
+    & [另一项竞赛名称、等级及年份；每项独立一行]。
+  \end{tabularx}
+\end{itemize}
+% 学位、在读状态及预计毕业时间应与申请材料一致，勿将未取得的学位写成已取得。
+
+\section{科研成果}
+
+\subsection*{一、学术论文}
+
+% 按真实作者顺序填写，使用 \cvname{本人姓名} 强调本人。
+% 引用格式允许时，可用 et al. 省略本人之后的作者；状态与正式记录一致。
+\begin{enumerate}[label={[\arabic*]},leftmargin=2em,labelsep=.55em,itemsep=5pt]
+  \item {[前序作者]}, \cvname{[本人英文姓名]}, et al.
+    [论文题目]. \textit{[期刊或会议正式名称]}, [年份]. [卷期页码、DOI 或录用信息，按实际填写].
+  \item {[前序作者]}, \cvname{[本人英文姓名]}, et al.
+    [预印本题目]. \textit{[预印本平台]}, [年份]. [编号或稳定链接；不等同于同行评审录用].
+  \item \textbf{[论文或在研工作题目]（[作者顺位]，[实际投稿状态]）}。\par
+    [研究问题与方法；本人完成的工作；已取得的结果及评价条件，可展开为两至三行。]
+\end{enumerate}
+
+\subsection*{二、专利}
+
+% 此处时间是研发时间；申请日、授权日及法律状态在下方另列。
+\begingroup
+\setlength{\resumedatewidth}{42mm}
+\datedentry{[专利名称]（第[序号]发明人）}{[研发起止年月]}
+\endgroup
+\begin{itemize}
+  \item \textbf{专利信息：}[申请或授权状态、对应编号及日期，以正式记录为准]。
+  \item \textbf{技术内容与贡献：}[说明解决的问题、核心方法及本人承担的技术工作]。
 \end{itemize}
 
-\section{学术论文}
+\subsection*{三、参与著作}
+
 \begin{itemize}
-  \item {[作者列表，标明本人姓名]}．[论文题目]．\textit{[期刊或会议名称]}，[年份]．[发表状态；DOI 或链接，可选]
-  \item {[作者列表，标明本人姓名]}．[论文题目]．\textit{[期刊或会议名称]}，[年份]．[发表状态；DOI 或链接，可选]
+  \item {[按书目格式填写作者、书名、出版社、年份及实际出版状态]}；本人负责[章节或具体工作]。
 \end{itemize}
 
-\section{科研经历}
+\section{实习经历}
 
-\datedentry{[研究项目名称]}{[起止年月]}
-\resumesubtitle{[承担角色]}{[研究团队或所属单位]}
+\internshipentry{[单位名称]}{[部门／团队／岗位]}{[起止年月]}
 \begin{itemize}
-  \item \textbf{研究问题：}[说明研究背景、待解决的问题及本项目的研究范围]
-  \item \textbf{研究工作：}[介绍采用的方法、资料或数据来源，以及本人负责的研究环节]
-  \item \textbf{主要成果：}[填写实际发现或产出，注明评价依据、适用条件及本人贡献]
-\end{itemize}
-
-\datedentry{[研究项目名称]}{[起止年月]}
-\resumesubtitle{[承担角色]}{[研究团队或所属单位]}
-\begin{itemize}
-  \item \textbf{项目目标：}[概括研究任务、预期产出及需要解决的关键问题]
-  \item \textbf{实施过程：}[描述本人完成的资料整理、方案设计、实验或分析工作]
-  \item \textbf{阶段结果：}[列出报告、论文、数据或其他成果，并说明验证方式与个人贡献]
-\end{itemize}
-
-\section{工作与实践经历}
-
-\datedentry{[单位名称]}{[起止年月]}
-\resumesubtitle{[岗位或实践角色]}{[部门或团队名称]}
-\begin{itemize}
-  \item \textbf{主要职责：}[说明工作对象、任务范围及本人承担的具体职责]
-  \item \textbf{执行工作：}[描述完成任务的方法、协作方式和关键行动]
-  \item \textbf{工作成果：}[填写可核实的交付物或改进效果；量化结果时注明统计口径]
+  \item \textbf{研究任务与方法：}[具体研究问题、采用的方法及本人承担的任务]。
+  \item \textbf{实现与实验：}[本人完成的系统、实验或分析工作，注明关键设计和评价方式]。
+  \item \textbf{项目成果：}[列出可核实的交付物或结果；涉及数量、比例或性能时说明统计口径及比较条件]。
 \end{itemize}
 
 \section{专业能力}
+
 \begin{itemize}
-  \item \textbf{研究方法：}[填写实际掌握的方法，并简要说明在何种研究任务中使用]
-  \item \textbf{工具与技术：}[填写软件、技术或专业工具，并注明能够独立完成的工作]
-  \item \textbf{语言与资格：}[填写语言水平、有效成绩或相关资格；不适用时删除]
+  \item \textbf{工具与技术：}[工具或技术名称]；能够完成[与申请相关的具体开发、分析或研究任务]。
+  \item \textbf{研究方法：}[方法名称]，用于[实际研究问题]；具备[方案设计、实现或分析工作]经验。
+  \item \textbf{英语水平：}[考试名称、分数及考试年份]；[其他语言成绩或能力，以实际记录为准]。
 \end{itemize}
 
-\section{荣誉奖项}
-\begin{itemize}
-  \item {[奖项或荣誉名称]}\enspace |\enspace [授予单位]\enspace |\enspace [等级或范围]\enspace |\enspace [获奖年月]
-  \item {[奖项或荣誉名称]}\enspace |\enspace [授予单位]\enspace |\enspace [等级或范围]\enspace |\enspace [获奖年月]
-\end{itemize}
+% 更多实习可复制上方条目，分别列出单位、部门、时间及各项目工作。
+% 可选，申请方不要求时可整节删除；每项评价应有前文经历支撑。
+% \section{自我评价}
+% [结合已有研究与实习经历，用两至四行概括研究问题分析、任务推进及科研协作能力。每项评价应有事实支持。]
+
+% 若有未被论文或实习覆盖的独立项目，可将下列模块放在实习之前。
+% \section{科研与项目经历}
+% \datedentry{[研究或项目名称]}{[起止年月]}
+% \resumesubtitle{[本人角色]}{[研究团队或所属单位]}
+% \begin{itemize}
+%   \item \textbf{研究问题：}[具体问题与研究范围]。
+%   \item \textbf{本人工作：}[方法、数据或资料来源及本人负责的任务]。
+%   \item \textbf{实际结果：}[已完成的产出、评价依据与当前状态]。
+% \end{itemize}
 
 \end{document}
